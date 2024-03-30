@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETechy Gaming</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mods.css">
+</head>
+<body>
+    <header>
+        <h1>ETechy Gaming</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown" onclick="toggleDropdown(event)">
+                    <a href="#">Premium Mods</a>
+                    <ul class="dropdown-menu" id="dropdown-menu1">
+                        <li><a href="Mods1.html">Bedrock/PE Mods</a></li>
+                        <li><a href="#">Java Edition Mods</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Free Mods</a></li>
+                <li class="dropdown" onclick="toggleDropdown(event)">
+                    <a href="#">Minecraft Server Store</a>
+                    <ul class="dropdown-menu" id="dropdown-menu2">
+                        <li><a href="#">Ranks</a></li>
+                        <li><a href="#">Crate Keys</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" onclick="toggleDropdown(event)">
+                    <a href="#">Contact Us</a>
+                    <ul class="dropdown-menu" id="dropdown-menu3">
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfN7UGzHG4mAo4tl8Bo34ShBVXfwJyhb_sZ3fvQW1bynZzBaw/viewform?usp=sf_link" target="_blank">For Custom Mods</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSca7DbjqFAXHNnwo2x-XMkU0qgGHAVwK1UEkQHr9VDYeU7R2g/viewform?usp=sf_link" target="_blank">For Other Problems</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="head">
+        <h1>Bedrock/PE Mods</h1>
+    </div>
+    <div class="Mods">
+        <div class="modlist"></div>
+        <div class="modlist"></div>
+        <div class="modlist"></div>
+        <div class="modlist"></div>
+        <div class="modlist"></div>
+        <div class="navbutton">
+            <div class="pre">
+                <a href="Mods1.html"><button id="navbu" class="navbu">Previous Page</button></a>
+            </div>
+            <div class="pageno" id="navbu">
+                <p>Page No.2</p>
+            </div>
+            <div class="next">
+                <button id="navbu" class="navbu">Next Page</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDropdown(event) {
+            const dropdownMenu = event.currentTarget.querySelector('.dropdown-menu');
+            const isActive = dropdownMenu.classList.contains('active');
+
+            // Close all dropdowns
+            const allDropdowns = document.querySelectorAll('.dropdown-menu');
+            allDropdowns.forEach(menu => {
+                menu.classList.remove('active');
+            });
+
+            // Toggle dropdown
+            if (!isActive) {
+                dropdownMenu.classList.add('active');
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown')) {
+                const allDropdowns = document.querySelectorAll('.dropdown-menu');
+                allDropdowns.forEach(menu => {
+                    menu.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
